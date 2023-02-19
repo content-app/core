@@ -1,51 +1,70 @@
-export default {
-    "name": "Core: Page",
-    "description": "",
-    "displayField": "title",
-    "fields": [
-        {
-            "id": "title",
-            "name": "title ",
-            "type": "Symbol"
-        },
-        {
-            "id": "pageTitle",
-            "name": "pageTitle",
-            "type": "Symbol"
-        },
-        {
-            "id": "slug",
-            "name": "slug",
-            "type": "Symbol"
-        },
-        {
-            "id": "page",
-            "name": "page",
-            "type": "Link",
-            "validations": [
-              {
-                "linkContentType": [
-                  "coreSeo"
-                ]
-              }
+import { ContentFields, KeyValueMap } from 'contentful-management';
+
+const fields: ContentFields<KeyValueMap>[] = [
+    {
+        id: 'title',
+        name: 'title ',
+        type: 'Symbol',
+        required: true,
+        localized: false,
+    },
+    {
+        id: 'pageTitle',
+        name: 'pageTitle',
+        type: 'Symbol',
+        required: true,
+        localized: false,
+    },
+    {
+        id: 'slug',
+        name: 'slug',
+        type: 'Symbol',
+        required: false,
+        localized: false,
+    },
+    {
+        id: 'page',
+        name: 'page',
+        type: 'Link',
+        localized: false,
+        required: false,
+        validations: [
+          {
+            linkContentType: [
+              'coreSeo'
+            ]
+          }
+        ],
+        linkType: 'Entry'
+      },
+    {
+        id: 'articles',
+        name: 'articles',
+        type: 'Array',
+        required: false,
+        localized: false,
+        items: {
+            type: 'Link',
+            validations: [
+                {
+                    linkContentType: [
+                        'coreArticle'
+                    ]
+                }
             ],
-            "linkType": "Entry"
-          },
-        {
-            "id": "articles",
-            "name": "articles",
-            "type": "Array",
-            "items": {
-                "type": "Link",
-                "validations": [
-                    {
-                        "linkContentType": [
-                            "coreArticle"
-                        ]
-                    }
-                ],
-                "linkType": "Entry"
-            }
+            linkType: 'Entry'
         }
-    ]
+    }
+]
+
+const pageModel = {
+    name: 'Core: Page',
+    displayField: 'title',
+    fields,
+    description: 'Page model',
+    sys: {
+        id: 'corePage',
+    },
 }
+
+export default pageModel;

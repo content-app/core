@@ -1,35 +1,52 @@
-export default {
-    "name": "Core: Seo",
-    "description": "",
-    "displayField": "title",
-    "fields": [
-        {
-            "id": "title",
-            "name": "title",
-            "type": "Symbol"
-        },
-        {
-            "id": "metaTitle",
-            "name": "metaTitle",
-            "type": "Symbol"
-        },
-        {
-            "id": "metaDescription",
-            "name": "metaDescription",
-            "type": "Symbol"
-        },
-        {
-            "id": "openGraph",
-            "name": "openGraph",
-            "type": "Link",
-            "validations": [
-                {
-                    "linkContentType": [
-                        "coreOpenGraph"
-                    ]
-                }
-            ],
-            "linkType": "Entry"
-        }
-    ]
+import { ContentFields, KeyValueMap } from 'contentful-management';
+
+const fields: ContentFields<KeyValueMap>[] = [
+    {
+        id: 'title',
+        name: 'title',
+        type: 'Symbol',
+        required: true,
+        localized: false,
+    },
+    {
+        id: 'metaTitle',
+        name: 'metaTitle',
+        type: 'Symbol',
+        required: true,
+        localized: false,
+    },
+    {
+        id: 'metaDescription',
+        name: 'metaDescription',
+        type: 'Symbol',
+        required: true,
+        localized: false,
+    },
+    {
+        id: 'openGraph',
+        name: 'openGraph',
+        type: 'Link',
+        required: false,
+        localized: false,
+        validations: [
+            {
+                linkContentType: [
+                    'coreOpenGraph'
+                ]
+            }
+        ],
+        linkType: 'Entry'
+    }
+]
+
+const seoModel = {
+    name: 'Core: Seo',
+    displayField: 'title',
+    description: 'SEO model',
+    sys: {
+        id: 'coreSeo',
+    },
+    fields,
 }
+
+export default seoModel;
