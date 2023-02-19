@@ -23,8 +23,8 @@ const fields: ContentFields<KeyValueMap>[] = [
         localized: false,
     },
     {
-        id: 'page',
-        name: 'page',
+        id: 'seo',
+        name: 'seo',
         type: 'Link',
         localized: false,
         required: false,
