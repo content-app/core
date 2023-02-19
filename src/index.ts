@@ -1,1 +1,5 @@
-export default {};
+import createCoreModels from './createCoreModels';
+
+export default {
+    createCoreModels,
+};
