@@ -15,6 +15,8 @@
 
 ## createCoreModels(client: ClientAPI, options: Options)
 
+This function creates the content types in your space.
+
 ```
 import contentful from 'contentful-management';
 
