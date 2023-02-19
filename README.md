@@ -11,4 +11,23 @@
 
 <img src="model.jpg" alt="Content model" />
 
+# API
+
+## createCoreModels(client: ClientAPI, options: Options)
+
+```
+import contentful from 'contentful-management';
+
+(async () => { 
+const client = contentful.createClient({
+    accessToken: 'YOUR_ACCESS_TOKEN',
+})
+
+await createCoreModels(client, {
+    spaceId: 'YOUR_SPACE_ID',
+    environment: 'YOUR_ENVIRONMENT',
+});
+})();
+```
+
 
