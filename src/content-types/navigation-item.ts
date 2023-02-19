@@ -2,6 +2,13 @@ import { ContentFields, KeyValueMap } from 'contentful-management';
 
 const fields: ContentFields<KeyValueMap>[] = [
     {
+        id: 'title',
+        name: 'title',
+        type: 'Symbol',
+        required: true,
+        localized: false,
+    },
+    {
         id: 'page',
         name: 'page',
         type: 'Link',
@@ -41,7 +48,7 @@ const navigationItemModel = {
     sys: {
         id: 'coreNavigationItem',
     },
-    displayField: 'page',
+    displayField: 'title',
     description: 'Navigation item model',
     fields,
 };
