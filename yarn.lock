@@ -2315,10 +2315,10 @@ confusing-browser-globals@^1.0.9:
   resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.11.tgz#ae40e9b57cdd3915408a2805ebd3a5585608dc81"
   integrity sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA==
 
-contentful-management@^10.28.0:
-  version "10.28.0"
-  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-10.28.0.tgz#0a62ef70af2d2fcd9d6dd8621a1c43d72253745c"
-  integrity sha512-r1JvZWAAlRqpcMITUM845hr++MQTWAuKYP/7uX47LR0P/iBs7eFRsbtAXG5DsxwDKQ/UWubSI3zCljMzpmjosw==
+contentful-management@^10.29.3:
+  version "10.29.3"
+  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-10.29.3.tgz#3593e76aa0c2f2d2030ef7cf528a9c36525d6b8c"
+  integrity sha512-5eWsFd3nIC+9weuRD+EON2dOUfo30d6MXO2nvempq+0uxWvWZTV0MB95glOzLXm4BmdtOLdx+6DBWKI0pVVUPw==
   dependencies:
     "@types/json-patch" "0.0.30"
     axios "^0.27.1"
