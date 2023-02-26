@@ -25,7 +25,6 @@ const createCoreModels = async (client: ClientAPI, options: Options) => {
         throw new Error('Missing environment');
     }
 
-
     console.log(`Creating core models in space ${options.spaceId} and environment ${options.environment}`);
 
     const space = await client.getSpace(options.spaceId);
