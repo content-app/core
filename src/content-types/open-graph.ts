@@ -53,9 +53,6 @@ const openGraphModel = {
     name: 'Core: Open Graph',
     displayField: 'title',
     description: 'Open Graph model',
-    sys: {
-        id: 'coreOpenGraph',
-    },
     fields,
 }
 

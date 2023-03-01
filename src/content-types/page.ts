@@ -62,9 +62,6 @@ const pageModel = {
     displayField: 'title',
     fields,
     description: 'Page model',
-    sys: {
-        id: 'corePage',
-    },
 }
 
 export default pageModel;

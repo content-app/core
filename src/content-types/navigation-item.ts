@@ -45,9 +45,6 @@ const fields: ContentFields<KeyValueMap>[] = [
 
 const navigationItemModel = {
     name: 'Core: Navigation - Item',
-    sys: {
-        id: 'coreNavigationItem',
-    },
     displayField: 'title',
     description: 'Navigation item model',
     fields,
