@@ -1,4 +1,5 @@
 import { ClientAPI } from "contentful-management";
+import { ContentTypes } from "./constants";
 import pageType from './content-types/page';
 import openGraphType from './content-types/open-graph';
 import articleType from './content-types/article';
@@ -30,22 +31,22 @@ const createCoreModels = async (client: ClientAPI, options: Options) => {
     const space = await client.getSpace(options.spaceId);
     const environment = await space.getEnvironment(options.environment);
 
-    const seoEntry = await environment.createContentType(seoType);
+    const seoEntry = await environment.createContentTypeWithId(ContentTypes.Seo, seoType);
     await seoEntry.publish();
 
-    const articleEntry = await environment.createContentType(articleType);
+    const articleEntry = await environment.createContentTypeWithId(ContentTypes.Article, articleType);
     await articleEntry.publish();
 
-    const openGraphEntry = await environment.createContentType(openGraphType);
+    const openGraphEntry = await environment.createContentTypeWithId(ContentTypes.OpenGraph, openGraphType);
     await openGraphEntry.publish();
 
-    const pageEntry = await environment.createContentType(pageType);
+    const pageEntry = await environment.createContentTypeWithId(ContentTypes.Page, pageType);
     await pageEntry.publish();
 
-    const navigationItemEntry = await environment.createContentType(navigationItemType);
+    const navigationItemEntry = await environment.createContentTypeWithId(ContentTypes.NavigationItem, navigationItemType);
     await navigationItemEntry.publish();
 
-    const navigationEntry = await environment.createContentType(navigationType);
+    const navigationEntry = await environment.createContentTypeWithId(ContentTypes.Navigation, navigationType);
     await navigationEntry.publish();
 
     console.log('Core models created successfully');

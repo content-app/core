@@ -1,24 +1,25 @@
 import { ContentfulClientApi } from 'contentful';
 import { Navigation, NavigationItem } from '../index.d';
 import fetchNavigationByName from './fetchNavigationByName';
-import { fetchPageById } from '../fetch-helper';
 
 const fetchAndTransformNavigationByName = async (client: ContentfulClientApi, name: string): Promise<Navigation> => {
   const navigationData = await fetchNavigationByName(client, name);
 
-  const transformNavigationLink = async (item: any): Promise<NavigationItem> => {
-    const { page } = item.fields;
-    const pageData = await fetchPageById(client, page.sys.id) as any;
+  const transformNavigationItem = async (item: any): Promise<NavigationItem> => {
+    const entry = await client.getEntry(item.sys.id) as any;
+
+    const page = entry.fields.page;
+    const childs = entry.fields.childs;
 
     const navigationLink: NavigationItem = {
-      name: pageData.fields.title,
-      url: pageData.fields.slug,
+      name: page?.fields?.title,
+      url: page?.fields?.slug,
       childs: [],
     };
 
-    if (item.fields.childs?.length > 0) {
-      for (const childItem of item.fields.childs) {
-        const childNavigationLink = await transformNavigationLink(childItem);
+    if (childs?.length > 0) {
+      for (const childItem of childs) {
+        const childNavigationLink = await transformNavigationItem(childItem);
         navigationLink.childs.push(childNavigationLink);
       }
     }
@@ -33,8 +34,8 @@ const fetchAndTransformNavigationByName = async (client: ContentfulClientApi, na
     };
 
     for (const item of navigationData.fields.items) {
-      const navigationLink = await transformNavigationLink(item);
-      navigation.childs.push(navigationLink);
+      const navigationItem = await transformNavigationItem(item);
+      navigation.childs.push(navigationItem);
     }
 
     return navigation;

@@ -24,9 +24,6 @@ const fields: ContentFields<KeyValueMap>[] = [
 
 const articleModel = {
     name: 'Core: Article',
-    sys: {
-        id: 'coreArticle',
-    },
     description: '',
     displayField: 'title',
     fields,

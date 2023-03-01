@@ -39,9 +39,6 @@ const navigationModel = {
     name: 'Core: Navigation',
     displayField: 'title',
     description: 'Navigation model',
-    sys: {
-        id: 'coreNavigation',
-    },
     fields,
 }
 

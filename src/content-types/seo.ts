@@ -43,9 +43,6 @@ const seoModel = {
     name: 'Core: Seo',
     displayField: 'title',
     description: 'SEO model',
-    sys: {
-        id: 'coreSeo',
-    },
     fields,
 }
 
