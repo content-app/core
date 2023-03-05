@@ -27,6 +27,9 @@ const articleModel = {
     description: '',
     displayField: 'title',
     fields,
+    sys: {
+        id: 'coreArticle',
+    }
 }
 
 export default articleModel;

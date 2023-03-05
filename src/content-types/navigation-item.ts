@@ -48,6 +48,9 @@ const navigationItemModel = {
     displayField: 'title',
     description: 'Navigation item model',
     fields,
+    sys: {
+        id: 'coreNavigationItem',
+    },
 };
 
 export default navigationItemModel;

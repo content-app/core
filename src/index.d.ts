@@ -17,3 +17,22 @@ export interface NavigationFields {
     name: string;
     items: NavigationItemFields[];
 };
+
+export interface Seo {
+    title: string;
+    description: string;
+    keywords: string;
+};
+
+export interface Article {
+    title: string;
+    modules?: any[];
+}
+
+export interface Page {
+    title: string;
+    pageTitle: string;
+    slug: string;
+    seo?: Seo;
+    articles?: Article[];
+};
