@@ -14,7 +14,8 @@ import client from 'contentful';
         client: myClient,
         slug: 'home',
     });
-    console.log(d);
+
+    console.log(JSON.stringify(d, null, 2));
 })();
 
 export default {
