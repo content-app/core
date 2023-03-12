@@ -1,7 +1,7 @@
 import { ContentfulClientApi } from 'contentful';
 import { ContentTypes } from '../constants';
 import { Page as PageInterface } from '../index.d';
-import { ContentModule } from '../content-module/index.d';
+import { ContentModule } from '../modules/content/index.d';
 
 type Config = {
     slug: string;

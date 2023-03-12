@@ -3,7 +3,7 @@ import { ContentFields, KeyValueMap } from 'contentful-management';
 const fields: ContentFields<KeyValueMap>[] = [
     {
         id: 'title',
-        name: 'title ',
+        name: 'title',
         type: 'Symbol',
         required: true,
         localized: false,
