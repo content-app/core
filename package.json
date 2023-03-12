@@ -31,7 +31,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "content-app",
+  "name": "@content-app/core",
   "author": "Jan-Markus Langer",
   "module": "dist/content-app.esm.js",
   "size-limit": [
