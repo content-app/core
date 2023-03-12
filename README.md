@@ -6,6 +6,9 @@
 
 ---
 
+# Install 
+
+`npm i @content-app/core`
 
 # Model
 
