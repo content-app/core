@@ -32,7 +32,7 @@ const fetchPages = async (config: Config): Promise<string[]> => {
     }
 
     for (const module of config.modules || []) {
-        const moduleRoutes = await module.load({
+        const moduleRoutes = await module.loadRoutes({
             client: config.client,
             modules: config.modules,
             routes,    
