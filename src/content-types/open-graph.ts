@@ -54,6 +54,9 @@ const openGraphModel = {
     displayField: 'title',
     description: 'Open Graph model',
     fields,
+    sys: {
+        id: 'coreOpenGraph',
+    },
 }
 
 export default openGraphModel;

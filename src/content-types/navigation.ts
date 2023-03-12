@@ -40,6 +40,9 @@ const navigationModel = {
     displayField: 'title',
     description: 'Navigation model',
     fields,
+    sys: {
+        id: 'coreNavigation',
+    },
 }
 
 export default navigationModel;

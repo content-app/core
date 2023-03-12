@@ -44,6 +44,9 @@ const seoModel = {
     displayField: 'title',
     description: 'SEO model',
     fields,
+    sys: {
+        id: 'coreSeo',
+    },
 }
 
 export default seoModel;
