@@ -3,7 +3,7 @@ import { fetchAndTransformNavigationByName } from './navigation';
 import { fetchPages, fetchPageBySlug } from './page';
 import { fetchAll } from './helper';
 
-export default {
+export {
     fetchAll,
     fetchPages,
     fetchPageBySlug,
