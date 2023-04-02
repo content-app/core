@@ -35,4 +35,28 @@ await createCoreModels(client, {
 })();
 ```
 
+# Modules
+
+There are several ways to hook into the system. 
+For example, you might want to implement a module that installs one or more content types, 
+or you may want to add more pages, or you may want to add more data.
+Even though there will be a page for every page contentype, there could be cases when you want to add your own. 
+
+# Modules - Add you own content types 
+
+If you want to use this feature you need to install the cli https://github.com/content-app/cli.
+
+- First you need to install the module via npm. For example: `npm install module-content-stage`
+- Then you can use the command `content-app load-content-module <contentModule>`. 
+- This command will look after this file in the current path: `node_modules/@content-app/content-module_${contentModule}/install.js`
+- The command will then import the exported function and call it with following arguments: client, space, environment
+
+So your install.js might start like this. 
+
+```js  
+module.exports = async function({ client, space, environment }) {
+     const myEntry = await environment.createContentTypeWithId({... your configs}, 'MyContentypeId');
+     await myEntry.publish();
+};
+```
 
