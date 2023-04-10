@@ -2,8 +2,13 @@ import { ContentfulClientApi } from 'contentful';
 import { Navigation, NavigationItem } from '../index.d';
 import fetchNavigationByName from './fetchNavigationByName';
 
-const fetchAndTransformNavigationByName = async (client: ContentfulClientApi, name: string): Promise<Navigation> => {
-  const navigationData = await fetchNavigationByName(client, name);
+type Props = {
+  client: ContentfulClientApi;
+  name: string;
+}
+
+const fetchAndTransformNavigationByName = async ({client, name}: Props): Promise<Navigation> => {
+  const navigationData = await fetchNavigationByName({client, name});
 
   const transformNavigationItem = async (item: any): Promise<NavigationItem> => {
     const entry = await client.getEntry(item.sys.id) as any;

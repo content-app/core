@@ -2,7 +2,12 @@ import { ContentfulClientApi, Entry } from 'contentful';
 import { NavigationFields } from '../index.d';
 import { ContentTypes } from '../constants';
 
-const fetchNavigationByName = async (client: ContentfulClientApi, name: string): Promise<Entry<NavigationFields>> => {
+type Props = {
+    client: ContentfulClientApi;
+    name: string;
+};
+
+const fetchNavigationByName = async ({ client, name }: Props): Promise<Entry<NavigationFields>> => {
     const navigationEntries = await client.getEntries({
         content_type: ContentTypes.Navigation,
         'fields.name': name,

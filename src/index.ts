@@ -1,5 +1,5 @@
 import createCoreModels from './createCoreModels';
-import { fetchAndTransformNavigationByName } from './navigation';
+import { fetchAndTransformNavigationByName, fetchNavigationByName } from './navigation';
 import { fetchPages, fetchPageBySlug } from './page';
 import { fetchAll } from './helper';
 
@@ -9,4 +9,5 @@ export {
     fetchPageBySlug,
     createCoreModels,
     fetchAndTransformNavigationByName,
+    fetchNavigationByName,
 };
