@@ -1,8 +1,6 @@
 import { ContentfulClientApi } from 'contentful';
-import { ContentModule } from '../modules/content/index.d';
+import { ContentModule } from '@content-app/types/types.d';
 import { PageModule } from '../modules/page/index.d';
-
-
 
 export type FetchPageConfig = {
     slug: string;
