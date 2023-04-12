@@ -1,47 +1,24 @@
-import { ContentfulClientApi, Entry } from 'contentful';
+import { ContentfulClientApi } from 'contentful';
 import { PageModule } from '../modules/page';
-import { ContentTypes } from '../constants';
-import { fetchAll } from '../helper';
+import fetchPageSlugs from './fetchPageSlugs';
+import fetchModuleRoutes from './fetchModuleRoutes';
+
 
 type Config = {
-    client: ContentfulClientApi;
-    modules?: PageModule[];
+  client: ContentfulClientApi;
+  modules?: PageModule[];
 };
 
 const fetchPages = async (config: Config): Promise<string[]> => {
-    const routes: string[] = [];
+  const routes: string[] = [];
 
-    const pages = await fetchAll((skip: number) => {
-        return config.client.getEntries({
-            content_type: ContentTypes.Page,
-            skip,
-            limit: 1,
-        });
-    })
+  const pageSlugs = await fetchPageSlugs(config);
+  routes.push(...pageSlugs);
 
-    type PageItems = Entry<{ slug: string }>[]
+  const moduleRoutes = await fetchModuleRoutes(config);
+  routes.push(...moduleRoutes);
 
-    for (const page of pages as PageItems) {
-        const slug = page?.fields?.slug as string;
-
-        if (!slug) {
-            continue;
-        }
-
-        routes.push(slug);
-    }
-
-    for (const module of config.modules || []) {
-        const moduleRoutes = await module.loadRoutes({
-            client: config.client,
-            modules: config.modules,
-            routes,    
-        });
-
-        routes.push(...moduleRoutes);
-    }
-
-    return routes;
+  return routes;
 };
 
 export default fetchPages;
