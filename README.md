@@ -35,7 +35,15 @@ await createCoreModels(client, {
 })();
 ```
 
-# Modules
+# Modules 
+
+There are 3 types of modules
+
+- RouteModule: to extend routes
+- PageModule: Load your own page content
+- ContentModule: Load your own content 
+
+# Content Modules
 
 There are several ways to hook into the system. 
 For example, you might want to implement a module that installs one or more content types, 

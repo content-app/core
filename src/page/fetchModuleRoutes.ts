@@ -1,9 +1,9 @@
 import { ContentfulClientApi } from 'contentful';
-import { PageModule } from '../modules/page';
+import { RouteModule } from '../modules/page';
 
 type Config = {
     client: ContentfulClientApi;
-    modules?: PageModule[];
+    modules?: RouteModule[];
   };
 
 const fetchModuleRoutes = async (config: Config): Promise<string[]> => {

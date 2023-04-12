@@ -2,7 +2,7 @@ import { ContentfulClientApi } from 'contentful';
 
 type RoutePayload = {
     client: ContentfulClientApi;
-    modules?: PageModule[];
+    modules?: RouteModule[];
     routes: string[];
 };
 
@@ -14,8 +14,11 @@ type FetchDataPayload = {
     };
 };
 
-export interface PageModule {
+export interface RouteModule {
     loadRoutes: (payload: RoutePayload) => Promise<string[]>;
+}
+
+export interface PageModule {
     loadContent: (payload: FetchDataPayload) => Promise<any>;
     shouldLoadContent: (payload: FetchDataPayload) => boolean;
 };
