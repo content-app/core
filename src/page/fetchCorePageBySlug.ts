@@ -36,7 +36,7 @@ const fetchCorePageBySlug = async (config: FetchPageConfig) => {
     } = {};
 
     for (const articleItem of articles) {
-        const { title, modules } = articleItem.fields;
+        const { title, modules, ...articleFields } = articleItem.fields;
         const moduleData: any[] = [];
 
         for (const module of modules) {
@@ -65,6 +65,7 @@ const fetchCorePageBySlug = async (config: FetchPageConfig) => {
         }
 
         articleData.push({
+            ...articleFields,
             title,
             modules: moduleData,
         });
