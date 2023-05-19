@@ -50,7 +50,7 @@ For example, you might want to implement a module that installs one or more cont
 or you may want to add more pages, or you may want to add more data.
 Even though there will be a page for every page contentype, there could be cases when you want to add your own. 
 
-# Modules - Add you own content types 
+# Add your own content types 
 
 If you want to use this feature you need to install the cli https://github.com/content-app/cli.
 
