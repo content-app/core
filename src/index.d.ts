@@ -2,6 +2,8 @@ export interface NavigationItem {
     name: string;
     url: string;
     childs: NavigationItem[];
+    page: any;
+    entry: any;
 };
 
 export interface Navigation {

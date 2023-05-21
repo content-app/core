@@ -17,9 +17,11 @@ const fetchAndTransformNavigationByName = async ({client, name}: Props): Promise
     const childs = entry.fields.childs;
 
     const navigationLink: NavigationItem = {
-      name: page?.fields?.title,
-      url: page?.fields?.slug,
+      name: entry?.fields?.displayText || page?.fields?.pageTitle,
+      url: entry?.fields?.link ||page?.fields?.slug,
       childs: [],
+      entry,
+      page,
     };
 
     if (childs?.length > 0) {

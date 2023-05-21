@@ -24,6 +24,20 @@ const fields: ContentFields<KeyValueMap>[] = [
         localized: false,
     },
     {
+        id: 'link',
+        name: 'link',
+        type: 'Symbol',
+        required: false,
+        localized: false,
+    },
+    {
+        id: 'displayText',
+        name: 'displayText',
+        type: 'Symbol',
+        required: false,
+        localized: false,
+    },
+    {
         id: 'childs',
         name: 'childs',
         type: 'Array',
